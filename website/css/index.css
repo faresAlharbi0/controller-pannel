@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #474752;
+}
+nav{
+    width: 100%; 
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    background-color: #2E8A99;
+}
+nav div{
+    width: 3rem;
+    height: 1.5rem;
+    text-align: center;
+    background-color: azure;
+    margin-left: 1.5rem;
+}
+.direction{
+    width: 8rem;
+    height: 3rem;
+    text-align: center;
+    display: flex;
+    background-color: #2ba8bb;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+}
+.direction:hover{
+    background-color: #32b9ce;
+    cursor: pointer;
+
+}
+.mcontainer{
+    height: 100vw;
+    display: flex;
+    margin-top: 5rem;
+    justify-content: center;
+}
+.controller{
+    height: 20rem;
+    display: flex;
+    background-color: #74a6af;
+    box-shadow: 0 0.5rem 3rem rgba(0,0,0,0.4);
+    align-content: center;
+    margin-bottom: 10rem;
+    justify-content: center;
+}
+.left{
+    display: flex;
+    flex-direction: row;
+    margin-right: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.middle{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.2rem;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+.right{
+    display: flex;
+    margin-left: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.tittle{
+    background-color: #2E8A99;
+    width: 30rem;
+    height: 4rem;
+    display: flex;
+    box-shadow: 0rem 0.5rem 3rem rgba(0,0,0,0.4);
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+
+}
+.sliderpanel{
+    display: flex;
+    justify-content: start;
+    height: 24rem;
+    overflow: hidden;
+    width:0rem;
+    background-color: #74a6af;
+}
+.slidertittle{
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24rem;
+    background-color: #2b90a0;
+}
+.holder{
+    width: 27rem;
+    display: flex;
+    justify-content: end;
+}
+/* 3rem as a start
