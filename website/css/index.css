@@ -40,6 +40,8 @@ nav div{
     display: flex;
     margin-top: 5rem;
     justify-content: center;
+    position: relative;
+    right: 10rem;
 }
 .controller{
     height: 20rem;
@@ -103,4 +105,4 @@ nav div{
     display: flex;
     justify-content: end;
 }
-/* 3rem as a start
+/* 3rem as a start*/

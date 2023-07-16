@@ -12,4 +12,34 @@ app.post('/',(req,res)=>{
     }
     res.status(200).send({status:'recieved'})
     console.log(parcel['parcel']);
+    addDirection(parcel['parcel']);
 })
+
+//database conection//
+
+function addDirection(direction){
+    
+    //connection
+    const mysql = require("mysql2");
+    let db = mysql.createConnection({
+            host:'127.0.0.1',
+            user:'root',
+            password:'root',
+            port:'3306',
+            database:'form' 
+    });
+
+    db.connect(function(err){
+        //SQL command
+        let sql = "INSERT INTO form (directions) VALUES ('"+direction+"')";
+
+        //exeucte command
+        db.query(sql, function(err,result){
+            
+            if(err) throw err;
+
+            //if no errors
+            console.log("1 record added");
+        })
+    })
+}
