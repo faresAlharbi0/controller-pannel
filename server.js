@@ -4,7 +4,7 @@ app.use(express.json());
 app.use("/",express.static("./website"));
 app.listen(2500,(req,res)=>{
     console.log("started") /**to run the server:
-    -1 make sure to add "dev" :"nodemon server.js" in package.json file
+    -1 make sure to add "dev" :"nodemon server.js" in package.json file under the scripts header
     -2 type in the terminal: npm run dev 
     -3 if nodemon isn't installed type in terminal npm i --save-dev nodemon to install */
 })
