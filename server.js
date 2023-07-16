@@ -26,7 +26,7 @@ function addDirection(direction){
             user:'root',
             password:'root',
             port:'3306',
-            database:'form' 
+            database:'directions'
     });
 
     db.connect(function(err){
