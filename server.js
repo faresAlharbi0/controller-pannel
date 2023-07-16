@@ -27,7 +27,7 @@ function addDirection(direction){
     let db = mysql.createConnection({
             host:'127.0.0.1',
             user:'root',
-            password:'root',
+            password:'',
             port:'3306',
             database:'directions'
     });
