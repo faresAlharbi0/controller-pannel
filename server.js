@@ -3,7 +3,7 @@ const app = express();
 app.use(express.json());
 app.use("/",express.static("./website"));
 app.listen(2500,(req,res)=>{
-    console.log("started") /**to run server type in the terminal: npm run dev */
+    console.log("started") /**to run server type in the terminal: npm run dev, npm i --save-dev nodemon to install */
 })
 app.post('/',(req,res)=>{
     const parcel = req.body
