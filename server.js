@@ -31,7 +31,7 @@ function addDirection(direction){
 
     db.connect(function(err){
         //SQL command
-        let sql = "INSERT INTO form (directions) VALUES ('"+direction+"')";
+        let sql = "INSERT INTO directions (direction) VALUES ('"+direction+"')";
 
         //exeucte command
         db.query(sql, function(err,result){
