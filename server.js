@@ -8,6 +8,19 @@ app.listen(2500,(req,res)=>{
     -2 type in the terminal: npm run dev 
     -3 if nodemon isn't installed type in terminal npm i --save-dev nodemon to install */
 })
+app.get('/retrive',(req,res)=>{
+    retriveResult(function(err,data){
+        if (err) {
+            // error handling code goes here
+            console.log("ERROR : ",err);            
+        } else {            
+            // code to execute on data retrieval
+            obj = JSON.parse(data);
+            console.log(obj[0].direction);
+            res.status(200).send("<h1>"+obj[0].direction+"</h1>")
+        }    
+    })
+})
 app.post('/',(req,res)=>{
     const parcel = req.body
     if(!parcel){
@@ -19,11 +32,35 @@ app.post('/',(req,res)=>{
 })
 
 //database conection//
+const mysql = require("mysql2");
+function retriveResult(callback){
+    let db = mysql.createConnection({
+        host:'127.0.0.1',
+        user:'root',
+        password:'',
+        port:'3306',
+        database:'directions'
+});
 
+db.connect(function(err){
+    //SQL command
+    let sql = "SELECT direction FROM `directions` ORDER BY id DESC LIMIT 1";
+
+    //exeucte command
+    db.query(sql, function(err,result){
+        
+        if(err) callback(err,null);
+
+        //if no errors
+        callback(null,JSON.stringify(result));
+    })
+})
+
+
+}
 function addDirection(direction){
-    
+
     //connection
-    const mysql = require("mysql2");
     let db = mysql.createConnection({
             host:'127.0.0.1',
             user:'root',
@@ -38,7 +75,6 @@ function addDirection(direction){
 
         //exeucte command
         db.query(sql, function(err,result){
-            
             if(err) throw err;
 
             //if no errors
