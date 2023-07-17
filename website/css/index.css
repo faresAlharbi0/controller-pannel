@@ -108,13 +108,12 @@ nav div{
 }
 /* 3rem as a start*/
 .directions_entery{
-    width: 90%;
-    max-height: 90%;
+    width:  90%;
+    height: 90%;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    justify-content: safe end;
-    align-items: start;
+    row-gap: 1rem;
 }
 .directionentery{
     width: 8rem;
@@ -125,6 +124,13 @@ nav div{
     border-radius: 1rem;
     background-color: #437694;
     margin-left: 0rem;
-    margin-bottom: 1rem;
     flex: 0 0 auto;
+}
+.messageContainer{
+    display: flex;
+    align-items: end;
+    column-gap: 0.5rem;
+}
+.message{
+    margin-bottom: 1rem;
 }

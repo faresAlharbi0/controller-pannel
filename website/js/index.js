@@ -38,5 +38,12 @@ async function addDirection(e){
     headers:{"Content-Type":'application/json'},
     body: JSON.stringify({parcel: e.target.id})
   });
+  printDirection(e.target.id)
+}
+const box = document.getElementById("directions_entery");
+let message ="";
+function printDirection(e){
+  message = '<div class="messageContainer"><div class="directionentery">'+e+'</div><div class="message">'+new Date().toUTCString()+'</div></div>' + message
+  box.innerHTML = message;
 }
 
