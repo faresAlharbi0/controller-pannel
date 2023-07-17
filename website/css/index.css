@@ -86,7 +86,8 @@ nav div{
 }
 .sliderpanel{
     display: flex;
-    justify-content: start;
+    justify-content: center;
+    align-items: center;
     height: 24rem;
     overflow: hidden;
     width:0rem;
@@ -106,3 +107,24 @@ nav div{
     justify-content: end;
 }
 /* 3rem as a start*/
+.directions_entery{
+    width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: safe end;
+    align-items: start;
+}
+.directionentery{
+    width: 8rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    background-color: #437694;
+    margin-left: 0rem;
+    margin-bottom: 1rem;
+    flex: 0 0 auto;
+}
