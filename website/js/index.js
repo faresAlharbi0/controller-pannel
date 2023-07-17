@@ -43,7 +43,7 @@ async function addDirection(e){
 const box = document.getElementById("directions_entery");
 let message ="";
 function printDirection(e){
-  message = '<div class="messageContainer"><div class="directionentery">'+e+'</div><div class="message">'+new Date().toUTCString()+'</div></div>' + message
+  message = '<div class="messageContainer"><div class="directionentery">'+e+'</div><div class="message">'+new Date().toLocaleTimeString()+'</div></div>' + message
   box.innerHTML = message;
 }
 
