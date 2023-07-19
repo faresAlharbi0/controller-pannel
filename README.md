@@ -13,3 +13,8 @@ a history of presssed buttons and their directions, and the time they were press
 
 ## example of visiting localhost:2500/retrive to request a get response with the last entered direction
 ![image](https://github.com/faresAlharbi0/controller-pannel/assets/122399786/02de0b2f-66ba-43a3-bd44-8252a192c441)
+
+# instruction on how to run the website/important dependencies
+1- node js/npm need to be installed
+2- in the server.js folder, open the terminal and write:
+$ npm init -y
