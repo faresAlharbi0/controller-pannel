@@ -30,4 +30,6 @@ $ npm i --save-dev nodemon
 ```
 5-in package.json make sure to add the script: ```"dev" :"nodemon server.js"``` like shown in the photo:
 ![image](https://github.com/faresAlharbi0/controller-pannel/assets/122399786/693c6695-dbfe-4261-8665-3b90f6b96829)
+
+
 6- in the terminal type ``` $ npm run dev``` and everything should be running correctly
