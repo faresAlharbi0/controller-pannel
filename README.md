@@ -33,3 +33,4 @@ $ npm i --save-dev nodemon
 
 
 6- in the terminal type ``` $ npm run dev``` and everything should be running correctly
+7- go to localhost:2500/html/index.html to run the website or go to localhost:2500/retrive to retrive the last database entery from your own database server, make sure to match it with the quereies in the server.js file
