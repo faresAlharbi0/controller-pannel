@@ -16,7 +16,7 @@ a history of presssed buttons and their directions, and the time they were press
 
 # instruction on how to run the website/important dependencies
 1- node js/npm need to be installed.
-2- xmapp need to be installed and run the apache/mysql localhosts in the application gui
+2- xmapp need to be installed and run the apache/mysql localhosts in the application gui.
 2- in the server.js folder, open the terminal and write to initilize the dependencies file:
 ```
 $ npm init -y
