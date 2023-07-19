@@ -16,7 +16,13 @@ a history of presssed buttons and their directions, and the time they were press
 
 # instruction on how to run the website/important dependencies
 1- node js/npm need to be installed
-2- in the server.js folder, open the terminal and write:
+2- in the server.js folder, open the terminal and write to initilize the dependencies file:
 ```
 $ npm init -y
+```
+3- install the following dependencies in the terminal
+```
+$ npm install express
+$ npm install mysql2
+$ npm i --save-dev nodemon
 ```
