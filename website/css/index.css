@@ -44,12 +44,12 @@ nav div{
     right: 10rem;
 }
 .controller{
-    height: 20rem;
+    height: 19rem;
     display: flex;
     background-color: #74a6af;
-    box-shadow: 0 0.5rem 3rem rgba(0,0,0,0.4);
     align-content: center;
     margin-bottom: 10rem;
+    box-shadow: 0rem 0.5rem 3rem rgba(0,0,0,0.4);
     justify-content: center;
 }
 .left{
@@ -76,10 +76,10 @@ nav div{
 .tittle{
     background-color: #2E8A99;
     width: 30rem;
-    height: 4rem;
+    height: 5rem;
     display: flex;
+    flex-direction: column;
     box-shadow: 0rem 0.5rem 3rem rgba(0,0,0,0.4);
-    align-items: center;
     justify-content: center;
     align-items: center;
 
@@ -90,7 +90,6 @@ nav div{
     align-items: center;
     height: 24rem;
     overflow: hidden;
-    width:0rem;
     background-color: #74a6af;
 }
 .slidertittle{
@@ -133,4 +132,37 @@ nav div{
 }
 .message{
     margin-bottom: 1rem;
+}
+.settingsContainer{
+    width: 100%;
+    height: 2.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    background-color: #2E8A99;
+}
+.settings{
+    margin-right: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 5rem;
+    border: 2px solid black;
+    background-color: #2ba8bb;
+    margin-bottom: 0rem;
+}
+.settings:hover{
+    background-color: #33b6ca;
+    cursor: pointer;
+
+}
+.controllerBox{
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
 }
