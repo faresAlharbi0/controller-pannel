@@ -40,8 +40,8 @@ nav div{
     display: flex;
     margin-top: 5rem;
     justify-content: center;
-    position: relative;
-    right: 10rem;
+    position: absolute;
+    left: 10%;
 }
 .controller{
     height: 19rem;
@@ -165,4 +165,37 @@ nav div{
     flex-direction: column;
     justify-content: center;
     justify-items: center;
+}
+dialog {
+    z-index: 10;
+    top: 20%;
+    left: 33%;
+    background-color: #2e8b99e3;
+}
+.settingsModal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    width: 27rem;
+    height: 18rem;
+}
+dialog::backdrop {
+    background-color: hsla(0, 0%, 0%, 0.315);
+  }
+.inputWrapper{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+}
+.inputFields {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 0.1rem;
+}
+.closewrapper{
+    margin-top: 2rem;
 }

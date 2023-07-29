@@ -47,3 +47,16 @@ function printDirection(e){
   box.innerHTML = message;
 }
 
+const openModal = document.querySelector("[data-open-modal]");
+const closeModal = document.querySelector("[data-close-modal]");
+const Modal = document.querySelector("[data-modal]");
+
+openModal.addEventListener("click",(e)=>{
+  e.preventDefault();
+  Modal.showModal();
+})
+closeModal.addEventListener("click",(e)=>{
+  e.preventDefault();
+  Modal.close()
+})
+

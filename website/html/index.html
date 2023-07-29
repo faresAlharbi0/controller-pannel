@@ -33,7 +33,7 @@
                 <div class="tittle">
                     controller
                     <div class="settingsContainer">
-                        <div class="settings"><span class="material-symbols-outlined">
+                        <div  data-open-modal class="settings"><span class="material-symbols-outlined">
                             settings
                             </span></div>
                                  
@@ -53,6 +53,33 @@
                     </div>
                 </div>
             </div>
+            <dialog data-modal>
+                <div class="settingsModal">
+                    <div class="inputWrapper">
+                        <div class="inputFields">
+                            <label for="">forward</label><br/>
+                            <input type="number">
+                        </div>
+                        <div class="inputFields">
+                            <label for="">backward</label><br/>
+                            <input type="number">
+                        </div>
+                    </div>
+                    <div class="inputWrapper">
+                        <div class="inputFields">
+                            <label for="">left</label><br/>
+                            <input type="number">
+                        </div>
+                        <div class="inputFields">
+                            <label for="">right</label><br/>
+                            <input type="number">
+                        </div>
+                    </div>
+                    <div class="closewrapper">
+                        <div data-close-modal class="direction">save</div>
+                    </div>
+                </div>
+            </dialog>
         </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" 
