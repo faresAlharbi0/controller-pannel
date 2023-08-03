@@ -17,7 +17,7 @@ a history of presssed buttons and their directions, and the time they were press
 # task2
 
 ## settings modal dialogue overlay to configure the distance of the direction the robot will take
-### the overlay will open when you click on the settings icon, and will closes when you click the save button
+the overlay will open when you click on the settings icon, and will closes when you click the save button
 ![image](https://github.com/faresAlharbi0/controller-pannel/assets/122399786/9c38220e-2b34-4c0e-bf5f-3b880cd29f22)
 
 ## simple path tracer map for the robot movments
