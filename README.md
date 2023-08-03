@@ -4,7 +4,7 @@ in this controller panel i used node js to handle the backend while i used
 javascript to handle smooth animitions with the GSAP api, it has a container with the 5 buttons
 and a side panel that expands or closes as you click the expand icon (<<) , in the side panel you will find
 a history of presssed buttons and their directions, and the time they were pressed.
-#Task1
+# Task1
 ## a photo of the site
 ![image](https://github.com/faresAlharbi0/controller-pannel/assets/122399786/b221a357-aeca-455d-9d8a-c393f6f0526c)
 
@@ -14,7 +14,7 @@ a history of presssed buttons and their directions, and the time they were press
 ## example of visiting localhost:2500/retrive to request a get response with the last entered direction
 ![image](https://github.com/faresAlharbi0/controller-pannel/assets/122399786/02de0b2f-66ba-43a3-bd44-8252a192c441)
 
-#task2
+# task2
 
 ## settings modal dialogue overlay to configure the distance of the direction the robot will take
 ### the overlay will open when you click on the settings icon, and will closes when you click the save button
