@@ -31,6 +31,7 @@ const Right = document.getElementById("right");
 Right.addEventListener("click",addDirection);
 const Stop = document.getElementById("stop");
 Stop.addEventListener("click",addDirection);
+const pathTrace = document.getElementById("pathTrace");
 async function addDirection(e){
   e.preventDefault();
   const res = await fetch(baseUrl,
@@ -39,6 +40,7 @@ async function addDirection(e){
     body: JSON.stringify({parcel: e.target.id})
   });
   printDirection(e.target.id)
+  printPath(e.target.id)
 }
 const box = document.getElementById("directions_entery");
 let message ="";
@@ -46,7 +48,28 @@ function printDirection(e){
   message = '<div class="messageContainer"><div class="directionentery">'+e+'</div><div class="message">'+new Date().toLocaleTimeString()+'</div></div>' + message
   box.innerHTML = message;
 }
-
+let path = "m50 100";
+function printPath(d){
+  if(d == "forward"){
+    path += "v-10" 
+    addpath()
+  }
+  if(d == "backward"){
+    path += "v10" 
+    addpath()
+  }
+  if(d == "right"){
+    path += "h10" 
+    addpath()
+  }
+  if(d == "left"){
+    path += "h-10" 
+    addpath()
+  }
+}
+function addpath(){
+  pathTrace.innerHTML = '<path stroke="black" stroke-width="1" fill="none" d="'+path+'"/>'
+}
 const openModal = document.querySelector("[data-open-modal]");
 const closeModal = document.querySelector("[data-close-modal]");
 const Modal = document.querySelector("[data-modal]");
