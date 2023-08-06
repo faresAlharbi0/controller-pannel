@@ -37,7 +37,7 @@ function retriveResult(callback){
     let db = mysql.createConnection({
         host:'127.0.0.1',
         user:'root',
-        password:'',
+        password:'root',
         port:'3306',
         database:'directions'
 });
