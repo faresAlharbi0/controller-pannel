@@ -9,7 +9,7 @@ const tl2 = gsap.timeline({
   }
 });
 tl2.set(vrcontainer,{autoAlpha:1})
-tl2.to(vrcontainer,{ height: "30rem"})
+tl2.to(vrcontainer,{ height: "35rem"})
 function slideNav() {
     // play or reverse the timeline
     tl2.reversed() ? tl2.play() : tl2.reverse();
