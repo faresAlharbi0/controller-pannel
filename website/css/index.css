@@ -46,6 +46,19 @@ nav img{
     margin-right: 7rem;
     border-radius: 10rem;
 }
+.vrsession{
+    background-color: #54d06b;
+    width: 8rem;
+    height: 3rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vrsession:hover{
+    background-color: #5adc72;
+    cursor: pointer;
+}
 .direction{
     width: 8rem;
     height: 3rem;
@@ -236,12 +249,12 @@ dialog::backdrop {
     margin-top: 2rem;
 }
 .svgwrapper{
-    width: 20rem;
-    height: 20rem;
+    width: 16.5rem;
+    height: 16.5rem;
     display: flex;
     justify-content: center;
     position: relative;
-    left: 25%;
+    left: 23%;
     background-color: #437694;
 }
 .vrcontainer{
@@ -267,9 +280,9 @@ dialog::backdrop {
     overflow-y: auto;
     align-items: center;
     flex-direction: column;
+    row-gap: 0.5rem;
 }
 .vrinputs{
-    margin-top: 1.5rem;
     background-color: #4685a3;
     display: flex;
     align-items: start;
@@ -277,24 +290,17 @@ dialog::backdrop {
     border-radius: 1rem 1rem 1rem 0.4rem;
     width: 90%;
     padding: 1rem 0rem 1rem 0;
-    box-shadow: 0rem 0rem .2rem rgba(0, 0, 0, 0.28);
+    box-shadow: 0rem 0.5rem 3rem rgba(0,0,0,0.4);
+}
+.vrinputs:first-child{
+    margin-top: 1.5rem;
+}
+.vrinputs:last-child{
+    margin-bottom: 1rem;
 }
 .vrmsg{
     margin-left: 0.5rem;
     overflow-x: auto;
     word-wrap: break-word;
-}
-.vrsession{
-    background-color: #54d06b;
-    width: 8rem;
-    height: 3rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.vrsession:hover{
-    background-color: #5adc72;
-    cursor: pointer;
 }
 /*  height: 30rem; */
