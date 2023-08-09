@@ -1,4 +1,3 @@
-
 const icon = document.getElementById("imgicon");
 icon.addEventListener("click", slideNav);
 const vrcontainer = document.getElementById("vrcontainer");
@@ -15,16 +14,45 @@ function slideNav() {
     // play or reverse the timeline
     tl2.reversed() ? tl2.play() : tl2.reverse();
   }
-
+let vrtext
+let vrmsg = ""
 const vrinputscontainer = document.getElementById("vrinputscontainer");
-
+const vrbtn = document.getElementById("vrbtn");
 let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition, recognition, recording = false;
 recognition = new SpeechRecognition();
-recognition.interimResults = true;
+recognition.interimResults = false;
 recognition.lang = "en-US";
-
-recognition.onresult = (e) =>{
-  text = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('');
-  console.log(text);
+function runvr(){
+  recognition.onresult = (e) =>{
+    vrtext = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('');
+    if(vrtext != "" && vrtext != undefined){
+      vrmsg += '<div class="vrinputs"><div class="vrmsg">'+vrtext+'</div></div>'
+      console.log(vrtext);
+    }
+  }
 }
-recognition.start();
+recognition.addEventListener('end', () => {
+  if(recording == true){
+    if(vrtext != "" && vrtext != undefined && vrmsg != undefined){
+      vrinputscontainer.innerHTML = vrmsg
+    }
+    vrtext = ""
+    recognition.start()
+  }
+});
+
+vrbtn.addEventListener('click',(e)=>{
+  if(recording == false){
+    vrbtn.classList.toggle("direction");
+    vrbtn.innerHTML = "on"
+    recording = true
+    recognition.start();
+    runvr()
+  }
+  else if(recording == true){
+    recognition.stop();
+    recording = false
+    vrbtn.classList.toggle("direction");
+    vrbtn.innerHTML = "off"
+  }
+})

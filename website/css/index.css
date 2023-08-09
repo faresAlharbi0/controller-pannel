@@ -54,6 +54,8 @@ nav img{
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 1rem;
+    border: 3px solid black;
 }
 .vrsession:hover{
     background-color: #5adc72;
