@@ -1,5 +1,7 @@
 const icon = document.getElementById("imgicon");
+const nav = document.getElementById("scndNav")
 icon.addEventListener("click", slideNav);
+const vrbtn = document.getElementById("vrbtn");
 const vrcontainer = document.getElementById("vrcontainer");
 const tl2 = gsap.timeline({
   reversed: true,
@@ -9,15 +11,26 @@ const tl2 = gsap.timeline({
   }
 });
 tl2.set(vrcontainer,{autoAlpha:1})
-tl2.to(vrcontainer,{ height: "35rem"})
+tl2.to(vrcontainer,{ height: "30rem"})
 function slideNav() {
     // play or reverse the timeline
-    tl2.reversed() ? tl2.play() : tl2.reverse();
+    if(tl2.reversed()){
+      tl2.play()
+      icon.style = "transform: translateX(6.5rem);"
+      nav.style = "transform: translateX(13.5em);"
+      vrbtn.style = "transform: translateY(0%);" 
+    }
+    else if(!tl2.reversed()){
+      tl2.reverse()
+      icon.style = "transform: translateX(0rem);"
+      nav.style = "transform: translateX(0rem);"
+      vrbtn.style = "transform: translateY(-500%);"
+    }
   }
 let vrtext
 let vrmsg = ""
 const vrinputscontainer = document.getElementById("vrinputscontainer");
-const vrbtn = document.getElementById("vrbtn");
+vrinputscontainer.scrollTop = vrinputscontainer.scrollHeight;
 let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition, recognition, recording = false;
 recognition = new SpeechRecognition();
 recognition.interimResults = false;
