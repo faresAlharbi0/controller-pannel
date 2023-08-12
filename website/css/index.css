@@ -5,6 +5,7 @@
 body{
     background-color: #474752;
     font-family: 'Kanit', sans-serif;
+    overflow-x: hidden;
 }
 @media all and (max-width: 1431px){ 
     .mcontainer{
@@ -43,29 +44,42 @@ body{
         height: 3rem !important;
     }
     .controller{
-        width: 90% !important;
+        width: 20rem !important;
+        height: 17rem !important;
+    }
+    .middle{
+        row-gap: 0.5rem !important;
     }
     .tittle{
-        width: 90% !important;
+        width: 20rem !important;
+    }
+    dialog {
+        width: 20rem !important;
+        height: 17rem !important;
+        left: 1rem !important;
+    }
+    .inputWrapper{
+        width: 85% !important;
+    }
+    .inputFields {
+        width: 49% !important;
+    }
+    .settingsModal{
+        width: 20rem !important;
+        height: 17rem !important;
     }
 }
 @media all and (max-width: 499px){
+    .vrcontainer{
+        width: 100% !important;
+        margin: 0 !important;
+    }
     .mcontainer{
         left: 1rem !important;
         align-items: flex-start !important;
-    }
-    .controller{
-        width: 70% !important;
-        height: 17rem !important;
-    }
-    .controllerBox{
-        width: 30rem !important;
-    }
+    } 
     .svgwrapper{
         left: 0rem !important;
-    }
-    .tittle{
-        width: 70% !important;
     }
 }
 ::-webkit-scrollbar {
@@ -92,8 +106,7 @@ nav{
     display: flex;
     align-items: center;
     background-color: #2E8A99;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 nav div{
     width: 5rem;
@@ -277,7 +290,6 @@ nav img{
     flex-direction: column;
     justify-content: center;
     align-items: end;
-    background-color: #2E8A99;
 }
 .settings{
     margin-right: 2rem;
@@ -295,13 +307,6 @@ nav img{
     background-color: #33b6ca;
     cursor: pointer;
 
-}
-.controllerBox{
-    width: 30rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
 }
 dialog {
     z-index: 10;

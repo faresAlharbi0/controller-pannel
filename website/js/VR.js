@@ -17,7 +17,7 @@ function slideNav() {
     if(tl2.reversed()){
       tl2.play()
       icon.style = "transform: translateX(6.5rem);"
-      nav.style = "transform: translateX(13.5em);"
+      nav.style = "transform: translateX(16em);"
       vrbtn.style = "transform: translateY(0%);" 
     }
     else if(!tl2.reversed()){
