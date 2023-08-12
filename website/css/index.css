@@ -6,6 +6,68 @@ body{
     background-color: #474752;
     font-family: 'Kanit', sans-serif;
 }
+@media all and (max-width: 1431px){ 
+    .mcontainer{
+        left: 30% !important;
+    }
+
+}
+@media all and (max-width: 1313px){
+    .mcontainer{
+        left: 27% !important;
+    }
+}
+@media all and (max-width:1251px){
+    .holder{
+        display: none !important;
+    }
+    .mcontainer{
+        left: 40% !important;
+    }
+    .svgwrapper{
+        left: 0rem !important;
+    }
+}
+@media all and (max-width:807px){
+    .vrcontainer{
+        position: relative !important;
+    }
+    .mcontainer{
+        left: 1rem !important;
+    }
+    .svgwrapper{
+        left: 0rem !important;
+    }
+    .direction{
+        width: 5rem !important;
+        height: 3rem !important;
+    }
+    .controller{
+        width: 90% !important;
+    }
+    .tittle{
+        width: 90% !important;
+    }
+}
+@media all and (max-width: 499px){
+    .mcontainer{
+        left: 1rem !important;
+        align-items: flex-start !important;
+    }
+    .controller{
+        width: 70% !important;
+        height: 17rem !important;
+    }
+    .controllerBox{
+        width: 30rem !important;
+    }
+    .svgwrapper{
+        left: 0rem !important;
+    }
+    .tittle{
+        width: 70% !important;
+    }
+}
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -87,8 +149,8 @@ nav img{
 
 }
 .navAnimationbtn{
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
     text-align: center;
     display: flex;
     border-radius: 0.7rem;
@@ -314,7 +376,7 @@ dialog::backdrop {
     flex: 0 0 auto;
     border-radius: 1rem 1rem 1rem 0.4rem;
     width: 90%;
-    padding: 1rem 0rem 1rem 0;
+    padding: 1rem 0.4rem 1rem 0;
     box-shadow: 0rem 0.5rem 3rem rgba(0,0,0,0.4);
 }
 .vrinputs:first-child{
