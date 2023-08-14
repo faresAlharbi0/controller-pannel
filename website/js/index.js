@@ -37,7 +37,7 @@ async function addDirection(e){
   const res = await fetch(baseUrl,
     {method:'POST',
     headers:{"Content-Type":'application/json'},
-    body: JSON.stringify({parcel: e.target.id})
+    body: JSON.stringify({parcel: escape(e.target.id)})
   });
   printDirection(e.target.id)
   printPath(e.target.id)
@@ -45,7 +45,7 @@ async function addDirection(e){
 const box = document.getElementById("directions_entery");
 let message ="";
 function printDirection(e){
-  message = '<div class="messageContainer"><div class="directionentery">'+e+'</div><div class="message">'+new Date().toLocaleTimeString()+'</div></div>' + message
+  message = '<div class="messageContainer"><div class="directionentery">'+escape(e)+'</div><div class="message">'+new Date().toLocaleTimeString()+'</div></div>' + message
   box.innerHTML = message;
 }
 let path = "m50 100";

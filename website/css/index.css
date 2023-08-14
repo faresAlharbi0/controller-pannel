@@ -112,7 +112,7 @@ nav div{
     width: 5rem;
     height: 3rem;
     height: 1.5rem;
-    margin-top: 1.2rem;
+    margin-top: 0.5rem;
     text-align: center;
     margin-left: 1rem;
     transition: transform 0.75s cubic-bezier(.22,.08,.34,.99);
@@ -124,7 +124,6 @@ nav img{
     width: 3rem;
     height: 3rem;
     position: absolute;
-    margin-top: 0.8rem;
     margin-right: 0rem;
     border-radius: 10rem;
     left: 3rem;
@@ -171,7 +170,7 @@ nav img{
     align-items: center;
     border: 3.5px solid black;
     position: absolute;
-    margin-top: 0.8rem;
+    margin-top: 0rem;
     left: 5rem;
     transform: translateY(-500%);
     transition: transform 0.75s cubic-bezier(.22,.08,.34,.99);
