@@ -175,6 +175,9 @@ nav img{
     transform: translateY(-500%);
     transition: transform 0.75s cubic-bezier(.22,.08,.34,.99);
 }
+#startbtn{
+    left: 12.2rem;
+}
 .mcontainer{
     height: 100vw;
     display: flex;

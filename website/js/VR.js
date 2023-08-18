@@ -2,6 +2,7 @@ const icon = document.getElementById("imgicon");
 const nav = document.getElementById("scndNav")
 icon.addEventListener("click", slideNav);
 const vrbtn = document.getElementById("vrbtn");
+const startbtn = document.getElementById("startbtn");
 const vrcontainer = document.getElementById("vrcontainer");
 const tl2 = gsap.timeline({
   reversed: true,
@@ -19,12 +20,14 @@ function slideNav() {
       icon.style = "transform: translateX(6.5rem);"
       nav.style = "transform: translateX(16em);"
       vrbtn.style = "transform: translateY(0%);" 
+      startbtn.style = "transform: translateY(0%);" 
     }
     else if(!tl2.reversed()){
       tl2.reverse()
       icon.style = "transform: translateX(0rem);"
       nav.style = "transform: translateX(0rem);"
       vrbtn.style = "transform: translateY(-500%);"
+      startbtn.style = "transform: translateY(-500%);" 
     }
   }
 let vrtext
@@ -54,6 +57,110 @@ recognition.addEventListener('end', () => {
   }
 });
 
+let audioIN = { audio: true };
+//  audio is true, for recording
+
+// Access the permission for use
+// the microphone
+navigator.mediaDevices.getUserMedia(audioIN)// 'then()' method returns a Promise
+.then(function (mediaStreamObj) {
+
+  // Connect the media stream to the
+  // first audio element
+  let audio = document.querySelector('audio');
+  //returns the recorded audio via 'audio' tag
+
+  // 'srcObject' is a property which
+  // takes the media object
+  // This is supported in the newer browsers
+  if ("srcObject" in audio) {
+    audio.srcObject = mediaStreamObj;
+  }
+  else {   // Old version
+    audio.src = window.URL
+      .createObjectURL(mediaStreamObj);
+  }
+
+  // It will play the audio
+  audio.onloadedmetadata = function (ev) {
+
+    // Play the audio in the 2nd audio
+    // element what is being recorded
+    audio.play();
+  };
+
+  const startbtn = document.getElementById("startbtn");
+  let audioRecording = false;
+
+  // 2nd audio tag for play the audio
+  let playAudio = document.getElementById('adioPlay');
+
+  // This is the main thing to recorded
+  // the audio 'MediaRecorder' API
+  let mediaRecorder = new MediaRecorder(mediaStreamObj);
+  // Pass the audio stream
+
+  startbtn.addEventListener('click',(e)=>{
+    if(audioRecording == false){
+      startbtn.classList.toggle("direction");
+      startbtn.innerHTML = "stop"
+      audioRecording = true
+      mediaRecorder.start();
+    }
+    else if(audioRecording == true){
+      startbtn.classList.toggle("direction");
+      startbtn.innerHTML = "start"
+      audioRecording = false
+      mediaRecorder.stop();
+    }
+  })
+
+  // If audio data available then push
+  // it to the chunk array
+  mediaRecorder.ondataavailable = function (ev) {
+    dataArray.push(ev.data);
+  }
+
+  // Chunk array to store the audio data
+  let dataArray = [];
+
+  // Convert the audio data in to blob
+  // after stopping the recording
+  mediaRecorder.onstop = function (ev) {
+
+    // blob of type mp3
+    console.log(dataArray)
+    let audioData = new Blob(dataArray,
+      { 'type': 'audio/mp3;' });
+      file = new File([audioData], "audio", {'type': 'audio/mp3;'})
+      uploadAudio(file);
+      // After fill up the chunk
+      // array make it empty
+      dataArray = [];
+
+      // Creating audio url with reference
+      // of created blob named 'audioData'
+      let audioSrc = window.URL
+      .createObjectURL(audioData);
+      // Pass the audio url to the 2nd video tag
+      playAudio.src = audioSrc;
+    }
+  })
+
+// If any error occurs then handles the error
+.catch(function (err) {
+  console.log(err.name, err.message);
+});
+startbtn.addEventListener('click',(e)=>{
+  if(recording == false){
+    startbtn.classList.toggle("direction");
+    startbtn.innerHTML = "on"
+  }
+  else if(recording == true){
+    startbtn.classList.toggle("direction");
+    startbtn.innerHTML = "off"
+  }
+})
 vrbtn.addEventListener('click',(e)=>{
   if(recording == false){
     vrbtn.classList.toggle("direction");
@@ -69,3 +176,19 @@ vrbtn.addEventListener('click',(e)=>{
     vrbtn.innerHTML = "off"
   }
 })
+function uploadAudio(input){
+  const formData = new FormData();
+  formData.append('audio', input);
+  fetch('/upload', {
+    method: 'POST',
+    body: formData
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Response from server:', data);
+    })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+}
