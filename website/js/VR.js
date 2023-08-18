@@ -80,20 +80,9 @@ navigator.mediaDevices.getUserMedia(audioIN)// 'then()' method returns a Promise
     audio.src = window.URL
       .createObjectURL(mediaStreamObj);
   }
-
-  // It will play the audio
-  audio.onloadedmetadata = function (ev) {
-
-    // Play the audio in the 2nd audio
-    // element what is being recorded
-    audio.play();
-  };
-
   const startbtn = document.getElementById("startbtn");
   let audioRecording = false;
 
-  // 2nd audio tag for play the audio
-  let playAudio = document.getElementById('adioPlay');
 
   // This is the main thing to recorded
   // the audio 'MediaRecorder' API
@@ -142,8 +131,6 @@ navigator.mediaDevices.getUserMedia(audioIN)// 'then()' method returns a Promise
       // of created blob named 'audioData'
       let audioSrc = window.URL
       .createObjectURL(audioData);
-      // Pass the audio url to the 2nd video tag
-      playAudio.src = audioSrc;
     }
   })
 
