@@ -120,8 +120,8 @@ navigator.mediaDevices.getUserMedia(audioIN)// 'then()' method returns a Promise
     // blob of type mp3
     console.log(dataArray)
     let audioData = new Blob(dataArray,
-      { 'type': 'audio/mp3;' });
-      file = new File([audioData], "audio", {'type': 'audio/mp3;'})
+      { 'type': "audio/x-wav" });
+      file = new File([audioData], "audio", {'type': 'audio/wav'})
       uploadAudio(file);
       // After fill up the chunk
       // array make it empty
@@ -168,11 +168,13 @@ function uploadAudio(input){
   formData.append('audio', input);
   fetch('/upload', {
     method: 'POST',
+    command: 'exportWAV',
     body: formData
   })
     .then(response => response.json())
     .then(data => {
-      console.log('Response from server:', data);
+      vrmsg += '<div class="vrinputs"><div class="vrmsg">'+data+'</div></div>'
+      vrinputscontainer.innerHTML = vrmsg
     })
   .catch(error => {
     console.error('Error:', error);

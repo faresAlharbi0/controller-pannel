@@ -11,7 +11,8 @@ const storage = multer.diskStorage({
       cb(null, file.originalname)
     }
   })
-  const upload = multer({storage}); 
+  const upload = multer({storage});
+const spawner = require('child_process').spawn
 app.listen(2500,(req,res)=>{
     console.log("started") /**to run the server:
     -1 make sure to add "dev" :"nodemon server.js" in package.json file under the scripts header
@@ -23,10 +24,13 @@ app.post('/upload', upload.single('audio'), (req, res) => {
     if (!req.file) {
         return res.status(400).json({ error: 'No audio file uploaded.' });
     }
+    var process = spawner('python3',["./python/VR.py","read"]);
+    process.stdout.on('data',(data) =>{
+        return res.status(200).json(data.toString());
+    })
 
     // Process the uploaded file (e.g., save it to a specific location)
     // ...
-    return res.status(200).json({ message: 'Audio file uploaded successfully.' });
 });
 app.get('/retrive',(req,res)=>{
     retriveResult(function(err,data){
