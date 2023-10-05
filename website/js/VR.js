@@ -51,6 +51,7 @@ recognition.addEventListener('end', () => {
   if(recording == true){
     if(vrtext != "" && vrtext != undefined && vrmsg != undefined){
       vrinputscontainer.innerHTML = vrmsg
+      vrinputscontainer.scrollTop = vrinputscontainer.scrollHeight;
     }
     vrtext = ""
     recognition.start()
@@ -175,6 +176,7 @@ function uploadAudio(input){
     .then(data => {
       vrmsg += '<div class="vrinputs"><div class="vrmsg">'+data+'</div></div>'
       vrinputscontainer.innerHTML = vrmsg
+      vrinputscontainer.scrollTop = vrinputscontainer.scrollHeight;
     })
   .catch(error => {
     console.error('Error:', error);
